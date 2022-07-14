@@ -10,16 +10,16 @@ export default function TextForm(props) {
     props.showAlert("Text converted to uppercase","success")
   };
 
-const savetxt= ()=>{
-  const element = document.createElement('a');
-  const file =new Blob(text,{
-    type: 'text/plain'
-  });
-  element.href = URL.createObjectURL(file);
-  element.download ='myfile.txt';
-  document.body.appendChild(element);
-  element.click();
-}
+// const savetxt= ()=>{
+//   const element = document.createElement('a');
+//   const file =new Blob(text,{
+//     type: 'text/plain'
+//   });
+//   element.href = URL.createObjectURL(file);
+//   element.download ='myfile.txt';
+//   document.body.appendChild(element);
+//   element.click();
+// }
 
   //convert text to lowercase
   const handleDownClick = () => {
@@ -112,9 +112,9 @@ const savetxt= ()=>{
           {/* <button className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={ftnsave}>
             Save as Pdf
           </button> */}
-          <button disabled={btn} className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={savetxt}>
+          {/* <button disabled={btn} className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={savetxt}>
             Save as .txt
-          </button>
+          </button> */}
           <button disabled={btn} className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={handleCopy}>Copy</button>
           <button disabled={btn} className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={removespace}>Remove Extra Spaces</button>
         </div>
