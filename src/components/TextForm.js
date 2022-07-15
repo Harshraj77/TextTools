@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { jsPDF } from "jspdf"; //jspdf module
+//module not working on deployment
+// import { jsPDF } from "jspdf"; //jspdf module
 
 
 //convert text to uppercase
@@ -36,12 +37,12 @@ export default function TextForm(props) {
   };
 
   // //saving text as a pdf file
-  const ftnsave = () => {
-    const doc = new jsPDF("l", "px", [1080, 1350]); //(landsacpe,resolution in,resolution)
-    doc.setFontSize(12);
-    doc.html(document.querySelector("#ans")).then(() => {
-      doc.save("report.pdf");
-    });
+  // const ftnsave = () => {
+  //   const doc = new jsPDF("l", "px", [1080, 1350]); //(landsacpe,resolution in,resolution)
+  //   doc.setFontSize(12);
+  //   doc.html(document.querySelector("#ans")).then(() => {
+  //     doc.save("report.pdf");
+  //   });
   //   //1
   //   //  doc.text(text,10,10);
   //   //  doc.save("file.pdf");
@@ -56,7 +57,7 @@ export default function TextForm(props) {
   //   // doc.html(document.querySelector('#ans')).then(() => {
   //   //     doc.save('report.pdf');
   //  //  });
-   };
+  //  };
 
   //copy text
   const handleCopy = ()=> {
@@ -109,9 +110,9 @@ export default function TextForm(props) {
           <button disabled={btn} className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={handleclearonclick}>
             Clear
           </button>
-          <button disabled={btn}  className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={ftnsave}>
+          {/* <button disabled={btn}  className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={ftnsave}>
             Save as Pdf
-          </button>
+          </button> */}
           {/* <button disabled={btn} className={`btn btn-${props.mode==='light'?'secondary':'light'} m-2`} onClick={savetxt}>
             Save as .txt
           </button> */}
