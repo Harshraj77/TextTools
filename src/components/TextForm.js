@@ -91,12 +91,14 @@ export default function TextForm(props) {
           {/* the "value" inside the textarea is set as "text"
         onChange is an event that is when text is changed inside box we call function handleOnChange */}
           <textarea
+            spellCheck="true"
             className="form-control"
             onChange={handleOnChange}
             value={text}
             id="mybox"
             rows="8"
-            style={{backgroundColor: props.mode==='light'?'white':'#beb9b9',color: props.mode==='dark'?'black':'black'}}
+            color={{}}
+            // style={{backgroundColor: props.mode==='light'?'white':'#010101',color: props.mode==='dark'?'white':'black'}}
           ></textarea>
         </div>
         <div className="Buttons">
@@ -122,7 +124,7 @@ export default function TextForm(props) {
         </div>
       </div>
       <div className="container" style={{color: props.mode==='dark'?'white':'black',fontFamily: 'Ibarra Real Nova'}}>
-        <h2>Your Text Summay</h2>
+        <h2>Your Text Summary</h2>
         <p>
           Word/s: {text===''?'0':text.split(/\s+/).filter((element)=> {return element.length!==0}).length}  
         </p>
@@ -134,8 +136,9 @@ export default function TextForm(props) {
         </p> */}
         <div className="card">
           <div className={`card-header bg-${props.mode} text-${props.mode==='light'?'black':'white'} text-center`} style={{fontFamily: 'Cormorant SC'}}>Text Preview</div>
-          <div className='card-body'  style={{backgroundColor: props.mode==='light'?'white':'grey',color: props.mode==='dark'?'white':'black'}}>
-            <p className="card-text " id="ans">{text.length>0?text:"No Text to Preview"}</p>
+          <div className='card-body'  
+          style={{backgroundColor: props.mode==='light'?'white':'white',color: props.mode==='dark'?'black':'black'}}>
+            <p className="card-text " id="ans" >{text.length>0?text:"No Text to Preview"}</p>
           </div>
         </div>
       </div>
